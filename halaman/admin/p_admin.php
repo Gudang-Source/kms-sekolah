@@ -4,21 +4,22 @@ include "adm_header.php";
 
 
 ?>
-    <style>
-    .red-square {
-  background-color: #fafafa;
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
- 
+<style>
+.red-square {
+    background-color: #fafafa;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
 }
-h3{
-    color :grey;
-    width:100%;
-    text-align:center;
+
+h3 {
+    color: grey;
+    width: 100%;
+    text-align: center;
     text-transform: uppercase;
 }
 </style>
@@ -26,14 +27,14 @@ h3{
 <div class="red-square">
     <div class="main">
         <h3>
-        <?php
+            <?php
             echo 'Selamat Datang '. $_SESSION['nama']; 
         ?>
         </h3>
         <center>
-        <div class="image">
-            <img src="../../assets/img/admin.png" >
-        </div>
+            <div class="image">
+                <img src="../../assets/img/admin.png">
+            </div>
         </center>
     </div>
 </div>

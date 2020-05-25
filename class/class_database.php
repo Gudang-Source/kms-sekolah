@@ -1,34 +1,23 @@
 <?php
 class Database{
-    private static $INSTANCE=null;
-    private $mysqli,
-     $HOST ='localhost',
-     $USER ='root',
-     $PASS ='',
-     $DBNAME ='db_kms';
+    private $_host = "localhost";
+    private $_username = "root";
+    private $_password = "";
+    private $_db = "db_kms";
+    protected $conn;
 
-     public function __construct(){
-         $this->mysqli = new mysqli($this->HOST, $this->USER,$this->PASS,$this->DBNAME);
-          if(mysqli_connect_error()){
-              die('gagal koneksi');
-          }
-     }
-
-     public static function getInstance(){
-         if(!isset(self::$INSTANCE)){
-             self::$INSTANCE = new Database();
-         }
-         return self::$INSTANCE;
-     }
-
-     // Untuk memberikan koneksi ke setiap class dan funtion
-    public function getConnection()
+    public function __construct()
     {
-     return $this->mysqli;
+        if (!isset($this->conn)) {
+            $this->conn = new mysqli($this->_host, $this->_username, $this->_password, $this->_db);
+            if (!$this->conn) {
+                echo "Tidak bisa terhubung ke database";
+                exit;
+            }
+            return $this->conn;
+        }
     }
 }
 
-// $db =Database::getInstance();
-// var_dump($db);
 
 ?>
