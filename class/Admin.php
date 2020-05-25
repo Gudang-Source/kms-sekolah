@@ -1,47 +1,42 @@
 <?php
+include_once 'Database.php';
+class Admin extends Database{
 
-class Admin{
-    private $_db;
-
-    public function __construct(){
-        $this->_db = Database::getInstance();
+    public function __construct()
+    {
+        parent::__construct();
     }
 
     public function registrasi($nik,$nama,$jk,$status,$akses,$password){
-        $conn = $this->_db->getConnection();
-        $password = password_hash($password, PASSWORD_DEFAULT); 
+        $password = md5($password); 
         
         $query ="SELECT * FROM pengguna WHERE nik='$nik' OR nama='$nama'";
-        $result = $conn->query($query);
+        $result = $this->conn->query($query);
         $count = mysqli_num_rows($result);
         if( $count > 0 )
         {
             echo "<script>alert('NIK atau nama sudah pernah digunakan')</script>";
-
         }
         else
         {
             $query1="INSERT INTO pengguna SET nik='$nik', nama='$nama', jk='$jk', status='$status', akses='$akses', password='$password', created=now()";
 
-            $result = mysqli_query($conn, $query1);
+            $result = mysqli_query($this->conn, $query1);
             if( $result )
             {
                 echo "<script>alert('Berhasil Anda Berhasil Registrasi');</script>";
             }   
-          
         }  
     }
 
     public function tampil($table, $data, $value){
         if($data==""){
-            $conn=$this->_db->getConnection();
             $query= "SELECT * FROM $table";
-            $result = $conn->query($query);
+            $result = $this->conn->query($query);
         }
         else{
-            $conn = $this->_db->getConnection();
-            $query1="SELECT * FROM $table WHERE $data='$value'";
-            $result = $conn->query($query1);
+            $query="SELECT * FROM $table WHERE $data='$value'";
+            $result = $this->conn->query($query);
         }
         return $result;
     }

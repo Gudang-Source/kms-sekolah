@@ -1,9 +1,3 @@
-<?php
-
-include "adm_header.php";
-
-
-?>
 <style>
 .red-square {
     background-color: #fafafa;
@@ -33,7 +27,7 @@ h3 {
         </h3>
         <center>
             <div class="image">
-                <img src="../../assets/img/admin.png">
+                <img src="../assets/img/admin.png">
             </div>
         </center>
     </div>

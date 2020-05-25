@@ -1,30 +1,55 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin:0px;
+    color: #4e4e4e;
   }
-  
+ .container{
+  background: rgb(201,4,177);
+  width: 70%;
+  margin: auto;
+  padding-top: 60px;
+
+ }
+
+ .card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: .25rem;
+}
   .navbar {
-      background-color: #fafafa;
+      background: rgb(201,4,177);
+      background: linear-gradient(90deg, rgba(201,4,177,1) 0%, rgba(71,48,255,1) 61%, rgba(0,212,255,1) 100%);
       padding: 20px 10px;
       z-index:10;
       position:fixed;
       width:100%; 
       box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
       padding: 6px;
-      position:fixed;
     
+  }
+  .main-nav{
+  padding-left: 15%;
+padding-right: 15%;
   }
   
   .navbar a {
       float: left;
-    /* color: rgb(105, 105, 105); */
-    color:grey;
+      color: rgb(241, 241, 241);
     text-align: center;
-    padding: 12px;
+    padding: 14 16px;
     text-decoration: none;
-    font-size: 15px; 
-    line-height: 25px;
-    border-radius: 4px;
+    border-radius: 2px;
   }
   
   .dropdown {
@@ -34,10 +59,10 @@ body {
   
   .dropdown .dropbtn {
     font-size: 16px;  
-    border-radius: 4px;
+    border-radius: 2px;
     border: none;
     outline: none;
-    color: grey;
+    color: rgb(241, 241, 241);
     padding: 14px 16px;
     background-color: inherit;
     font-family: inherit;
@@ -45,7 +70,7 @@ body {
   }
   
   .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: #2A579A;
+    background-color: rgb(223, 171, 0);
     color:white;
   }
   
@@ -75,3 +100,29 @@ body {
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+.table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table tr:hover {
+    background-color: #f1f3f7;
+}
+
+.blokir {
+    color: #fff;
+    /* color: #212529; */
+    margin: 0px;
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    border-radius: .25rem;
+}
+
+td a {
+    margin: 0 5px;
+}
+
+tr th {
+    padding: 10px;
+}

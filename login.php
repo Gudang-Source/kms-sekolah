@@ -1,11 +1,7 @@
 <?php
-include "class/class_database.php";
-include "class/class_login.php";
+require_once 'init.php';
 
 $login= new Login();
-
-
-
 
 $nik =@$_POST['nik'];
 $pass =@$_POST['sandi'];
