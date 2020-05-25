@@ -3,30 +3,8 @@ body {
     margin:0px;
     color: #4e4e4e;
   }
- .container{
-  background: rgb(201,4,177);
-  width: 70%;
-  margin: auto;
-  padding-top: 60px;
 
- }
 
- .card {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, .125);
-  border-radius: .25rem;
-}
   .navbar {
       background: rgb(201,4,177);
       background: linear-gradient(90deg, rgba(201,4,177,1) 0%, rgba(71,48,255,1) 61%, rgba(0,212,255,1) 100%);
@@ -36,6 +14,7 @@ body {
       width:100%; 
       box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
       padding: 6px;
+      display: block;
     
   }
   .main-nav{
@@ -101,6 +80,25 @@ padding-right: 15%;
     display: block;
   }
 
+
+
+  .card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+}
+
 .table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
@@ -126,3 +124,108 @@ td a {
 tr th {
     padding: 10px;
 }
+
+.container {
+    width: 70%;
+    margin: auto;
+    display: block;
+    padding-top: 63px;
+}
+
+.container-form{
+  width: 50%;
+  margin: auto;
+  display: block;
+  padding-top: 63px;
+}
+
+.btn-submit {
+    color: #fff;
+  background-color: rgb(0, 80, 199);
+
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+a{
+  text-decoration: none;
+}
+
+
+
+/* CSS BARU */
+
+input[type=text], select, textarea {
+  width: 100%;  
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=password], select, textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+
+label {
+  padding: 5px ;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=reset] {
+  background-color: rgb(255, 130, 130);
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+  
+}
+
+
+

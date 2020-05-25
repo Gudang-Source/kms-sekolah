@@ -8,10 +8,14 @@ class Pages{
         }
         ?>
 <link rel="stylesheet" href="../assets/css/style_user.css">
-
+<style>
+.nav {
+    padding: 14px 16px;
+}
+</style>
 <div class="navbar">
     <div class="main-nav">
-        <a class="" href="index.php">Home</a>
+        <a class="nav" href="index.php">Home</a>
         <div class="dropdown">
             <button class="dropbtn">Profile
                 <i class="fa fa-caret-down"></i>
@@ -66,12 +70,12 @@ class Pages{
                 <a href="kelola_forum.php">Kelola Forum</a>
             </div>
         </div>
-        <a href="../logout.php">Logout</a>
-        <img src="../assets/img/logo.png" style="width:200px;height:50px; float:right;">
+        <a class="nav" href="../logout.php">Logout</a>
+        <img src="../assets/img/logo.png" style="width:150px;height:35px;padding-top:5px; float:right;">
     </div>
 </div>
-<div class="container">
-    <?php 
+
+<?php 
         if(!isset($_GET['halaman'])){
             include 'p_admin.php';
         }else{
@@ -81,9 +85,7 @@ class Pages{
                 include 'p_admin.php';
             }
         }
-
         ?>
-</div>
 <?php }
 
 }?>

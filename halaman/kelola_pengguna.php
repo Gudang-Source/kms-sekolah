@@ -7,26 +7,27 @@ if(@$_GET['hapus']){
 }
 ?>
 <style>
-.main {
-    padding: 0px;
-}
-</style>
-<link rel="stylesheet" href="../assets/css/style_user.css">
-<div class="card">
-    <div class="card-body">
 
-        <div class="main">
-            <button class="button"><a href="tambah_pengguna.php">Tambah</a></button>
+</style>
+
+<link rel="stylesheet" href="../assets/css/style_user.css">
+<div class="container">
+    <div class="card">
+        <div class="card-body" style="padding: 10px;">
+            <a href="?halaman=tambah_pengguna" class="btn btn-submit">Tambah Pengguna</a>
         </div>
+    </div>
+
+    <div class="card">
         <table style="text-align: center;" class="table">
             <tr>
-                <th>no</th>
+                <th>NO</th>
                 <th>NIK</th>
-                <th>nama</th>
-                <th>kelamin</th>
-                <th>status</th>
-                <th>akses</th>
-                <th>created</th>
+                <th>NAMA</th>
+                <th>JK</th>
+                <th>STATUS</th>
+                <th>HAK AKSES</th>
+                <th>DAFTAR</th>
                 <th>Aksi</th>
             </tr>
             <?php
@@ -43,12 +44,10 @@ if(@$_GET['hapus']){
                 <td><?= $row->akses ?></td>
                 <td><?= $row->created?></td>
                 <td>
-                    <a href="edit_pengguna.php?ubah=<?= $row->id;?>"
-                        onclick="javascript:return confirm('Yakin ingin merubah data ?')"><img
-                            src="../../assets/img/edit.png" style="width:15px;height:15px;"> Edit</a>
+                    <a href="edit_pengguna.php?ubah=<?= $row->id;?>"><i class="fas fa-edit"></i></a>
                     <a href="?hapus=<?= $row->id;?>"
-                        onclick="javascript:return confirm('Yakin ingin menghapus data ?')"><img
-                            src="../../assets/img/hapus.png" style="width:15px;height:15px;"> Hapus</a>
+                        onclick="javascript:return confirm('Yakin ingin menghapus data ?')"><i
+                            class="fas fa-trash"></i></a>
                 </td>
             </tr>
             <?php endwhile ?>
