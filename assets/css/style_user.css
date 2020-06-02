@@ -72,6 +72,13 @@ label {
     /* background-color: #007bff;
     border-color: #007bff; */
 }
+.btn-reset {
+    color: #fff;
+    background-color: #ff2e27;
+    border-color: #e61f18;
+    /* background-color: #007bff;
+    border-color: #007bff; */
+}
 
 .btn {
     display: inline-block;

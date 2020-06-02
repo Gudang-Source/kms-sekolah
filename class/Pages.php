@@ -45,10 +45,10 @@ class Pages{
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="tambah_file.php">Upload File</a>
-                <a href="kelola_file.php">Kelola File</a>
-                <a href="tambah_link.php">Upload Link</a>
-                <a href="kelola_link.php">Kelola Link</a>
+                <a href="?halaman=tambah_file">Upload File</a>
+                <a href="?halaman=kelola_file">Kelola File</a>
+                <a href="?halaman=tambah_link">Upload Link</a>
+                <a href="?halaman=kelola_link">Kelola Link</a>
             </div>
         </div>
 
@@ -57,8 +57,8 @@ class Pages{
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="tambah_modul.php">Upload Modul</a>
-                <a href="kelola_modul.php">Kelola Modul</a>
+                <a href="?halaman=tambah_modul">Upload Modul</a>
+                <a href="?halaman=kelola_modul">Kelola Modul</a>
             </div>
         </div>
         <div class="dropdown">
@@ -66,8 +66,8 @@ class Pages{
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="tambah_forum.php">Tambah Forum</a>
-                <a href="kelola_forum.php">Kelola Forum</a>
+                <a href="?halaman=tambah_forum">Tambah Forum</a>
+                <a href="?halaman=kelola_forum">Kelola Forum</a>
             </div>
         </div>
         <a class="nav" href="../logout.php">Logout</a>
