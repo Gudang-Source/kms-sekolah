@@ -41,10 +41,6 @@ class Admin extends Database{
         return $result;
     }
     public function hapus($table,$kolom, $value){
-        $conn = $this->_db->getConnection();
-        $query = " DELETE FROM $table WHERE $kolom='$value'";
-        $result = $conn->query($query);
-        echo "<script>alert('Data telah dihapus');</script>";
 
     }
 
