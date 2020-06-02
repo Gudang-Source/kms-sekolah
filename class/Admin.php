@@ -1,16 +1,74 @@
 <?php
 include_once 'Database.php';
-class Admin extends Database{
+class Admin extends Database
+{
+
+    private $_table = 'pengguna';
 
     public function __construct()
     {
         parent::__construct();
     }
 
+
+    public function reg($data,$value)
+    {
+        $table = $this->_table;
+        $query = "SELECT * FROM  $table WHERE nik='$value'";
+        // var_dump($query);
+        // die;
+        $result = $this->conn->query($query);
+        $check = mysqli_num_rows($result);
+
+        if ($check > 0) {
+            echo ('<script LANGUAGE="JavaScript">
+            window.alert("Email sudah terdaftar!");
+            window.location.href="index.php?page=tambah-pengguna";
+            </script>');
+        } else {
+            // mengambil kolom
+            $column = implode(", ", array_keys($data));
+            // mengambil nilai
+            $valueArrays = array();
+            $i = 0;
+            foreach ($data as $key => $values) {
+                if (is_int($values)) {
+                    $valueArrays[$i] = $values;
+                } else {
+                    $valueArrays[$i] = "'" . $values . "'";
+                }
+                $i++;
+            }
+
+            $values = implode(", ", $valueArrays);
+            // INSERT INTO pengguna (id,nik, nama, status, akses, password,created) VALUE('','321522222222222222', 'as', 'Staf TU', 'Guru', 'as',NOW())
+            $query = "INSERT INTO $table (id,$column,created) VALUE('',$values,now())";
+            // var_dump($query);
+            // die;
+            $result = mysqli_query($this->conn, $query);
+
+            if ($result > 0) {
+                echo ('<script LANGUAGE="JavaScript">
+                    window.alert("Berhasil memasukan data");
+                    window.location.href="index.php?halaman=kelola_pengguna";
+                    </script>');
+            }
+        }
+        // header('Location: index.php?page=master-pengguna');
+        return $this;
+    }
+
+    public function get_code()
+    {
+        # code...
+    }
+
     public function registrasi($nik,$nama,$jk,$status,$akses,$password){
         $password = md5($password); 
         
         $query ="SELECT * FROM pengguna WHERE nik='$nik' OR nama='$nama'";
+        var_dump($query);
+        die;
         $result = $this->conn->query($query);
         $count = mysqli_num_rows($result);
         if( $count > 0 )
@@ -42,16 +100,54 @@ class Admin extends Database{
     }
     public function hapus($table,$kolom, $value){
 
+
     }
 
-    public function edit_pengguna($id,$nik,$nama,$jk,$status,$akses){
-        $conn = $this->_db->getConnection();
-        $query = "UPDATE pengguna SET nama='$nama', jk='$jk', status='$status', akses='$akses' WHERE id='$id'";
-        $result = $conn->query($query);
-        if($result == true){
-            echo "<script>alert('Anda Berhasil memperbarui pengguna');location.href='kelola_pengguna.php'</script>";
+    public function hapus_pengguna($id)
+    {
+        $query = "DELETE FROM $this->_table WHERE id='$id'";
+        $result = $this->conn->query($query);
+        if ($result == TRUE) {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Pengguna Dengan Kode ID(' . $id . ') Berhasil dihapus");
+                window.location.href="index.php?halaman=kelola_pengguna";
+                </script>');
+        } else {
+            echo ('<script LANGUAGE="JavaScript">
+            window.alert("Pengguna Dengan Kode ID(' . $id . ') Gagal dihapus");
+            window.location.href="index.php?halaman=kelola_pengguna&id='.$id.'";
+            </script>');
         }
-        
+    }
+    
+
+    public function edit_pengguna($data, $clause){
+        foreach ($clause as $value) {
+            $kd = $value;
+        }
+
+        foreach ($data as $key => $value) {
+            $field .= $key . "='" . $value . "',";
+        }
+        $field = substr($field, 0, -2);
+        foreach ($clause as $key => $value) {
+            $condition .= $key . "='" . $value . "' AND ";
+        }
+        $condition = substr($condition, 0, -5);
+        $query = 'UPDATE ' . $this->_table . ' SET ' . $field . "' WHERE " . $condition;
+
+        $result = mysqli_query($this->conn, $query);
+        if ($result == TRUE) {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Kode (' . $kd . ') Berhasil diperbarui");
+                window.location.href="index.php?halaman=kelola_pengguna";
+                </script>');
+        } else {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Kode (' . $kd . ') Gagal diperbarui");
+                window.location.href="index.php??halaman=kelola_pengguna&id=' . $kd . '";
+                </script>');
+        }
     }
 
     public function upload($table,$subjek,$kategori,$keterangan,$file,$extension,$size){

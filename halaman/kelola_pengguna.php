@@ -1,16 +1,12 @@
 <?php
 include "../init.php";
 
-if(@$_GET['hapus']){
-    $id= $_GET['hapus'];
-    $admin->hapus('pengguna','id',$id);
-}
+
 ?>
 <style>
 
 </style>
 
-<link rel="stylesheet" href="../assets/css/style_user.css">
 <div class="container">
     <div class="card">
         <div class="card-body" style="padding: 10px;">
@@ -44,8 +40,8 @@ if(@$_GET['hapus']){
                 <td><?= $row->akses ?></td>
                 <td><?= $row->created?></td>
                 <td>
-                    <a href="edit_pengguna.php?ubah=<?= $row->id;?>"><i class="fas fa-edit"></i></a>
-                    <a href="?hapus=<?= $row->id;?>"
+                    <a href="?halaman=edit_pengguna&ubah=<?= $row->id;?>"><i class="fas fa-edit"></i></a>
+                    <a href="?halaman=hapus_pengguna&id=<?= $row->id;?>"
                         onclick="javascript:return confirm('Yakin ingin menghapus data ?')"><i
                             class="fas fa-trash"></i></a>
                 </td>

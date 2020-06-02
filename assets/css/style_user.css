@@ -1,8 +1,100 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin:0px;
-    color: #4e4e4e;
+    background-color: #dae7ff;
+
   }
+
+  h4{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+
+  /* MY CSS */
+
+  .card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+}
+
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, .03);
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.main-form {
+    padding: 1rem;
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+.form-control {
+    display: block;
+    width: 30%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn-submit {
+    color: #fff;
+    background-color: #0368c7;
+    border-color: #0379c7;
+    /* background-color: #007bff;
+    border-color: #007bff; */
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+a {
+    text-decoration: none;
+}
+/* FORM */
 
 
   .navbar {
@@ -19,7 +111,7 @@ body {
   }
   .main-nav{
   padding-left: 15%;
-padding-right: 15%;
+  padding-right: 15%;
   }
   
   .navbar a {
@@ -73,39 +165,20 @@ padding-right: 15%;
   }
   
   .dropdown-content a:hover {
-    background-color: #2A579A;
+    background-color: rgb(0, 80, 199);
   }
   
   .dropdown:hover .dropdown-content {
     display: block;
   }
-
-
-
-  .card {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: .25rem;
-}
-
-.table tr:nth-child(even) {
+  .table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
 .table tr:hover {
     background-color: #f1f3f7;
 }
+
 
 .blokir {
     color: #fff;
@@ -117,13 +190,34 @@ padding-right: 15%;
     border-radius: .25rem;
 }
 
+td {
+    padding: 5px;
+    color: grey;
+}
+
 td a {
     margin: 0 5px;
 }
 
 tr th {
+    padding: 13px;
+    color: grey;
+}
+
+.table {
     padding: 10px;
 }
+.blokir {
+    color: #fff;
+    /* color: #212529; */
+    margin: 0px;
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    border-radius: .25rem;
+}
+
+
 
 .container {
     width: 70%;
@@ -169,7 +263,7 @@ a{
 
 
 /* CSS BARU */
-
+/* 
 input[type=text], select, textarea {
   width: 100%;  
   padding: 5px;
@@ -226,6 +320,6 @@ input[type=submit]:hover {
   }
   
 }
-
+ */
 
 

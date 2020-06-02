@@ -21,12 +21,12 @@ class Pages{
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="u_yayasan.php">Upload Yayasan</a>
-                <a href="u_prasekolah.php">Upload Pra Sekolah</a>
-                <a href="u_ra.php">Upload RA</a>
-                <a href="u_sd.php">Upload SD</a>
-                <a href="u_smp.php">Upload SMP</a>
-                <a href="u_lttq.php">Upload LLTQ</a>
+                <a href="?halaman=u_yayasan">Upload Yayasan</a>
+                <a href="?halaman=u_prasekolah">Upload Pra Sekolah</a>
+                <a href="?halaman=u_ra">Upload RA</a>
+                <a href="?halaman=u_sd">Upload SD</a>
+                <a href="?halaman=u_smp">Upload SMP</a>
+                <a href="?halaman=u_lttq">Upload LLTQ</a>
             </div>
         </div>
 
@@ -35,7 +35,7 @@ class Pages{
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="tambah_pengguna.php">Tambah Pengguna</a>
+                <a href="?halaman=tambah_pengguna">Tambah Pengguna</a>
                 <a href="?halaman=kelola_pengguna">Data Pengguna</a>
             </div>
         </div>
