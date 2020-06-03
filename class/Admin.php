@@ -150,7 +150,97 @@ class Admin extends Database
         }
     }
 
-    public function upload($table,$subjek,$kategori,$keterangan,$file,$extension,$size){
+    public function upload_struktur($tabel,$file1,$ket,$link){
+        $query = "UPDATE $tabel SET struktur='$file1' WHERE ket='$ket'";
+        $result = mysqli_query($this->conn, $query);
+        if ($result == TRUE) {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Berhasil Memasukan '.$ket.' Baru");
+                window.location.href="index.php?halaman='.$link.'";
+                </script>');
+        } else {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Gagal diperbarui struktur yayasan");
+                window.location.href="index.php?halaman='.$link.'";
+                </script>');
+        }
+    }
+
+    public function upload($table,$subjek,$kategori,$keterangan,$file,$extension,$size,$link){
+       $query="INSERT INTO $table VALUES ('','$subjek','$kategori','$keterangan','$file','$extension','$size',now())";
+       $result = mysqli_query($this->conn, $query);
+       if ($result == TRUE) {
+        echo ('<script LANGUAGE="JavaScript">
+            window.alert("Berhasil Memasukan file baru");
+            window.location.href="index.php?halaman='.$link.'";
+            </script>');
+        } else {
+        echo ('<script LANGUAGE="JavaScript">
+            window.alert("Gagal ditambahkan");
+            window.location.href="index.php?halaman='.$link.'";
+            </script>');
+        }
+    }
+
+    
+    public function edit_file($id,$subjek,$kategori,$keterangan,$file,$extension,$size,$link){
+        $query = "UPDATE file SET subjek='$subjek', kategori='$kategori', keterangan='$keterangan', file='$file', type='$extension', size='$size' WHERE id='$id'";
+        $result = mysqli_query($this->conn, $query);
+        if ($result == TRUE) {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Berhasil Merubah file");
+                window.location.href="index.php?halaman='.$link.'";
+                </script>');
+            } else {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Gagal Merubah data");
+                window.location.href="index.php?halaman='.$link.'";
+                </script>');
+            }
+        
+    }
+
+    
+    public function edit_file_lama($id,$subjek,$kategori,$keterangan,$link){
+        $query = "UPDATE file SET subjek='$subjek', kategori='$kategori', keterangan='$keterangan'  WHERE id='$id'";
+        $result = mysqli_query($this->conn, $query);
+        if ($result == TRUE) {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Berhasil Merubah file");
+                window.location.href="index.php?halaman='.$link.'";
+                </script>');
+            } else {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Gagal Merubah data");
+                window.location.href="index.php?halaman='.$link.'";
+                </script>');
+            }
+        
+        
+    }
+
+    public function hapus_file($table,$id)
+    {
+        $query = "DELETE FROM $table WHERE id='$id'";
+        $result = $this->conn->query($query);
+        if ($result == TRUE) {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Pengguna Dengan Kode ID(' . $id . ') Berhasil dihapus");
+                window.location.href="index.php?halaman=kelola_pengguna";
+                </script>');
+        } else {
+            echo ('<script LANGUAGE="JavaScript">
+            window.alert("Pengguna Dengan Kode ID(' . $id . ') Gagal dihapus");
+            window.location.href="index.php?halaman=kelola_pengguna&id='.$id.'";
+            </script>');
+        }
+    }
+
+
+
+
+    // OLD
+    public function upload_xxx($table,$subjek,$kategori,$keterangan,$file,$extension,$size){
         $conn = $this->_db->getConnection();
        $query="INSERT INTO $table VALUES ('','$subjek','$kategori','$keterangan','$file','$extension','$size',now())";
         $result = mysqli_query($conn, $query);
@@ -230,16 +320,8 @@ class Admin extends Database
         }  
     }
 
-    public function upload_struktur($tabel,$file1,$ket){
-        $conn = $this->_db->getConnection();
-        $query = "UPDATE $tabel SET struktur='$file1' WHERE ket='$ket'";
-        $result = $conn->query($query);
-        if($result == true){
-            echo "<script>alert('Anda Berhasil memperbarui Struktur organisasi di ".$ket."')</script>";
-        }
-    }
 
-    public function edit_file_lama($id,$subjek,$kategori,$keterangan){
+    public function edit_file_lama_xxx($id,$subjek,$kategori,$keterangan){
         $conn = $this->_db->getConnection();
         $query = "UPDATE file SET subjek='$subjek', kategori='$kategori', keterangan='$keterangan'  WHERE id='$id'";
         // var_dump($query);
@@ -251,7 +333,7 @@ class Admin extends Database
         
     }
 
-    public function edit_file($id,$subjek,$kategori,$keterangan,$file,$extension,$size){
+    public function edit_file_xxx($id,$subjek,$kategori,$keterangan,$file,$extension,$size){
         $conn = $this->_db->getConnection();
         $query = "UPDATE file SET subjek='$subjek', kategori='$kategori', keterangan='$keterangan', file='$file', type='$extension', size='$size' WHERE id='$id'";
         // var_dump($query);

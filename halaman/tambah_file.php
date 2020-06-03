@@ -2,23 +2,27 @@
 include "../init.php";
 $admin = new Admin();
 
-if(@$_POST['submit']){
+if(isset($_POST['submit'])){
   $subjek = $_POST['subjek'];
   $kategori = $_POST['kategori'];
   $keterangan = $_POST['keterangan'];
-
   $ext = explode(".", $_FILES['pilihfile']['name']);
   $size = $_FILES['pilihfile']['size'];
   $file = "file-".round(microtime(true)).".".end($ext);
   $sumber = $_FILES['pilihfile']['tmp_name'];
   $extension = end($ext);
-  $upload = move_uploaded_file($sumber, "../../assets/uploads/files/".$file);
+  $upload = move_uploaded_file($sumber, "../assets/uploads/files/".$file);
 
-  $admin->upload('file',$subjek,$kategori,$keterangan,$file,$extension,$size);
+  $admin->upload('file',$subjek,$kategori,$keterangan,$file,$extension,$size,'tambah_file');
 }
 ?>
 
 <div class="container">
+    <div class="card" style="margin-bottom:5px; background-color: rgb(255, 249, 231);">
+        <div class=" card-header">
+            <a href="?halaman=kelola_file">Kelola File /</a> <span>Tambah File</span>
+        </div>
+    </div>
     <div class="card">
         <div class="card-header">
             <h4>Upload File Materi</h4>

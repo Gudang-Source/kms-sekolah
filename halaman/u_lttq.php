@@ -7,8 +7,8 @@ if(isset($_POST['submit'])){
     $file1 = "file-".round(microtime(true)).".".end($ext1);
     $sumber = $_FILES['lttq']['tmp_name'];
     $extension1 = end($ext1);
-    $upload = move_uploaded_file($sumber, "../../assets/uploads/organisasi/".$file1);
-    $admin->upload_struktur('profile',$file1,'lttq');
+    $upload = move_uploaded_file($sumber, "../assets/uploads/organisasi/".$file1);
+    $admin->upload_struktur('profile',$file1,'lttq','u_lttq');
 
 }
 ?>

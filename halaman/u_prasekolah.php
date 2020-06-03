@@ -3,21 +3,16 @@ include "../init.php";
 
 if(isset($_POST['submit'])){
 $pra_sekolah = @$_POST['pra_sekolah'];
-
-
-
-
     $ext1 = explode(".", $_FILES['pra_sekolah']['name']);
     $size1 = $_FILES['pra_sekolah']['size'];
     $file1 = "file-".round(microtime(true)).".".end($ext1);
     $sumber = $_FILES['pra_sekolah']['tmp_name'];
     $extension1 = end($ext1);
-    $upload = move_uploaded_file($sumber, "../../assets/uploads/organisasi/".$file1);
-    $admin->upload_struktur('profile',$file1,'pra sekolah');
+    $upload = move_uploaded_file($sumber, "../assets/uploads/organisasi/".$file1);
+    $admin->upload_struktur('profile',$file1,'pra sekolah','u_prasekolah');
 
 }
 ?>
-
 
 <div class="container">
     <div class="card">
