@@ -1,11 +1,6 @@
 <?php
 include "../init.php";
 
-if(@$_GET['hapus']){
-    $id= $_GET['hapus'];
-    $admin->hapus('file','id',$id);
-}
-
 ?>
 
 <div class="container">

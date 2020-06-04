@@ -236,10 +236,29 @@ class Admin extends Database
         }
     }
 
+    public function upload_link($table,$link,$judul,$jenis,$ket,$link2){
+       $query="INSERT INTO $table VALUES ('','$link','$judul','$jenis','$ket',now())";
+       $result = mysqli_query($this->conn, $query);
+       if ($result == TRUE) {
+        echo ('<script LANGUAGE="JavaScript">
+            window.alert("Berhasil Memasukan file baru");
+            window.location.href="index.php?halaman='.$link2.'";
+            </script>');
+        } else {
+        echo ('<script LANGUAGE="JavaScript">
+            window.alert("Gagal ditambahkan");
+            window.location.href="index.php?halaman='.$link2.'";
+            </script>');
+        }
+    }
+
+
 
 
 
     // OLD
+
+    
     public function upload_xxx($table,$subjek,$kategori,$keterangan,$file,$extension,$size){
         $conn = $this->_db->getConnection();
        $query="INSERT INTO $table VALUES ('','$subjek','$kategori','$keterangan','$file','$extension','$size',now())";
@@ -251,7 +270,7 @@ class Admin extends Database
             echo "<script>alert('Anda Berhasil melakukan upload file');location.href='kelola_file.php'</script>";
         }  
     }
-    public function upload_link($table,$link,$judul,$jenis,$ket){
+    public function upload_link_xxx($table,$link,$judul,$jenis,$ket){
         $conn = $this->_db->getConnection();
        $query="INSERT INTO $table VALUES ('','$link','$judul','$jenis','$ket',now())";
         $result = mysqli_query($conn, $query);
