@@ -12,7 +12,9 @@ class Login extends Database{
     public function login($nik,$pass){
 
         $password_hash = md5($pass);
+
         $data = $this->verifikasi($nik, $password_hash);
+
         if ($data == TRUE) {
             session_start();
             $_SESSION['nik'] = $data['nik'];
@@ -35,6 +37,8 @@ class Login extends Database{
     public function verifikasi($nik, $password_hash)
     {
         $query = "SELECT * FROM {$this->table} WHERE nik='$nik' AND password='$password_hash'";
+        var_dump($query);
+        die;
         $result = $this->conn->query($query);
 
         if (mysqli_num_rows($result) > 0) {

@@ -26,7 +26,6 @@ $('.message a').click(function() {
 });
 </script>
 
-<link rel="stylesheet" href="assets/css/style.css">
 
 <div class="login-page">
 
