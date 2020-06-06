@@ -252,6 +252,26 @@ class Admin extends Database
         }
     }
 
+    
+    
+    public function upload_modul($table,$judul,$modul,$ket,$file,$extension,$size,$link2){
+
+       $query="INSERT INTO $table VALUES ('','$judul','$modul','$ket','$file','$extension','$size',now())";
+       $result = mysqli_query($this->conn, $query);
+
+        if ($result == TRUE) {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Berhasil Memasukan file baru");
+                window.location.href="index.php?halaman='.$link2.'";
+                </script>');
+            } else {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Gagal ditambahkan !");
+                window.location.href="index.php?halaman='.$link2.'";
+                </script>');
+            } 
+    }
+
 
 
 
@@ -283,7 +303,7 @@ class Admin extends Database
     }
 
     
-    public function upload_modul($table,$judul,$modul,$ket,$file,$extension,$size){
+    public function upload_modul_xxx($table,$judul,$modul,$ket,$file,$extension,$size){
         $conn = $this->_db->getConnection();
        $query="INSERT INTO $table VALUES ('','$judul','$modul','$ket','$file','$extension','$size',now())";
         $result = mysqli_query($conn, $query);
