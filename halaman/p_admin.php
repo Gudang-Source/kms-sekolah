@@ -102,7 +102,7 @@ h3 {
 <div class="container" style="padding-top:10px;">
     <div class="card">
         <div class="card-header">
-            <span>File</span>
+            <span>Modul</span>
         </div>
         <div class="card" style="padding: 10px;">
             <table style="text-align: center;" class="table">
@@ -117,24 +117,26 @@ h3 {
                         <th>Size</th>
                     </tr>
                 </thead>
-                <?php 
-                $no = 1;
-                $data = $admin->tampil('modul','','');
-                while ($row = $data->fetch_object()) {
-            ?>
+
+                <?php
+    $no = 1;
+    $data = $admin->tampil('modul','','');
+    while ($row = $data->fetch_object()) :
+?>
+
                 <tr>
                     <td><?= $no++; ?></td>
-                    <td><?= $row->subjek; ?></td>
-                    <td><?= $row->kategori ?></td>
-                    <td><?= $row->keterangan ?></td>
+                    <td><?= $row->judul; ?></td>
+                    <td><?= $row->modul; ?></td>
+                    <td><?= $row->ket; ?></td>
                     <td>
-                        <a target="_blank" href="../assets/uploads/files/<?= $row->file ?>">Lihat</a>
+                        <a target="_blank" href="../assets/uploads/moduls/<?= $row->file ?>">Lihat</a>
                         <!-- <img src="../assets/uploads/files/<?= $row->file ?>" width="20px"> -->
                     </td>
-                    <td><?= $row->type ?></td>
-                    <td><?= $row->size ?> Kb</td>
+                    <td><?= $row->type; ?></td>
+                    <td><?= $row->size; ?>Kb</td>
                 </tr>
-                <?php }?>
+                <?php endwhile ?>
             </table>
         </div>
     </div>

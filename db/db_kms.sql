@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Okt 2019 pada 14.47
--- Versi server: 10.4.6-MariaDB
--- Versi PHP: 7.2.21
+-- Waktu pembuatan: 06 Jun 2020 pada 16.16
+-- Versi server: 10.1.38-MariaDB
+-- Versi PHP: 5.6.40
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -32,12 +32,19 @@ CREATE TABLE `file` (
   `id` int(11) NOT NULL,
   `subjek` varchar(30) NOT NULL,
   `kategori` varchar(30) NOT NULL,
-  `keterangan` text NOT NULL,
+  `keterangan` varchar(30) NOT NULL,
   `file` varchar(50) NOT NULL,
   `type` varchar(5) NOT NULL,
   `size` varchar(10) NOT NULL,
   `created` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `file`
+--
+
+INSERT INTO `file` (`id`, `subjek`, `kategori`, `keterangan`, `file`, `type`, `size`, `created`) VALUES
+(5, 'File 1', 'materi', 'Materi file 1', 'file-1591445624.pdf', 'pdf', '758889', '2020-06-06 19:13:44');
 
 -- --------------------------------------------------------
 
@@ -92,7 +99,8 @@ CREATE TABLE `link` (
 
 INSERT INTO `link` (`id`, `link`, `judul`, `jenis`, `ket`, `created`) VALUES
 (6, 'https://www.youtube.com/channel/UCOX3JLJyVEhnUhC-G', 'Video Edulasi Saass', 'Video', 'Cara pembelajaran oke', '2019-10-13 08:41:33'),
-(9, 'https://www.youtube.com/watch?v=Bd-dYWpbkdk', 'Video Pendidikan Inklusif', 'Video', 'Video ini memperlihatkan gambaran pelaksanaan pembelajaran di kelas yang memfasilitasi siswa ABK dan siswa nonABK sehingga mereka dapat belajar bersama dengan baik. ', '2019-10-14 17:40:10');
+(9, 'https://www.youtube.com/watch?v=Bd-dYWpbkdk', 'Video Pendidikan Inklusif', 'Video', 'Video ini memperlihatkan gambaran pelaksanaan pembelajaran di kelas yang memfasilitasi siswa ABK dan siswa nonABK sehingga mereka dapat belajar bersama dengan baik. ', '2019-10-14 17:40:10'),
+(10, 'http://localhost/kms_sekolah/halaman/index.php?hal', 'attikel judul', 'Artikel', 'ketengana ini ahanyad', '2020-06-04 07:01:41');
 
 -- --------------------------------------------------------
 
@@ -104,12 +112,19 @@ CREATE TABLE `modul` (
   `id` int(11) NOT NULL,
   `judul` varchar(50) NOT NULL,
   `modul` varchar(30) NOT NULL,
-  `keterangan` text NOT NULL,
+  `ket` varchar(244) NOT NULL,
   `file` varchar(50) NOT NULL,
   `type` varchar(5) NOT NULL,
   `size` varchar(10) NOT NULL,
   `created` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `modul`
+--
+
+INSERT INTO `modul` (`id`, `judul`, `modul`, `ket`, `file`, `type`, `size`, `created`) VALUES
+(12, 'Modul Oke', 'modul khusus', 'as\r\n', 'file-1591451905.pdf', 'pdf', '758889', '2020-06-06 20:58:24');
 
 -- --------------------------------------------------------
 
@@ -133,10 +148,9 @@ CREATE TABLE `pengguna` (
 --
 
 INSERT INTO `pengguna` (`id`, `nik`, `nama`, `jk`, `status`, `akses`, `password`, `created`) VALUES
-(1, '3215', 'nendi', 'laki-laki', 'Administrator', 'admin', '$2y$10$G5JEZ3zg3pcw/y70TocoYOd2a9MQPpqw3S5O5G46F3iEtpqEEUSXi', '2019-10-13 00:05:42'),
-(2, '32151', 'nurjanah', 'perempuan', 'Guru', 'user', '$2y$10$gRdEXjGRC0rDBg4v0WEwheB1qquvFCjceBtakQkNa7RxxlntFaPq2', '2019-10-13 00:06:26'),
-(7, '32156', 'Sutianah', 'perempuan', 'Guru', 'user', '$2y$10$T.mNZ1pnJgAMe/E2z8pz..06LYqtTZxVyhyvHp5zrkKhb9X1KRhDO', '2019-10-14 17:34:27'),
-(8, '32157', 'M azis', 'laki-laki', 'Guru', 'user', '$2y$10$hiPVNFzGHFawU5ragXlKX.FBH0MD9xZU7WciIdeDqy3Sem0HKzMum', '2019-10-14 17:35:22');
+(2, '3215', 'nurjanah', 'perempuan', 'Guru', 'admin', 'f970e2767d0cfe75876ea857f92e319b', '2019-10-13 00:06:26'),
+(7, '32156', 'Sutianah', 'perempuan', 'Guru', 'user', 'f970e2767d0cfe75876ea857f92e319b', '2019-10-14 17:34:27'),
+(8, '32157', 'M azis', 'laki-laki', 'Guru', 'user', 'f970e2767d0cfe75876ea857f92e319b', '2019-10-14 17:35:22');
 
 -- --------------------------------------------------------
 
@@ -155,12 +169,11 @@ CREATE TABLE `profile` (
 --
 
 INSERT INTO `profile` (`id`, `struktur`, `ket`) VALUES
-(1, 'file-1571137033.png', 'yayasan'),
-(2, 'file-1571137084.png', 'pra sekolah'),
+(1, 'file-1591226055.jpeg', 'yayasan'),
+(2, 'file-1591226069.png', 'pra sekolah'),
 (3, 'file-1571126582.png', 'ra'),
-(4, 'file-1571128559.jpg', 'sd'),
-(5, 'file-1571128627.jpg', 'smp'),
-(6, 'file-1571126582.png', 'lttq');
+(4, 'file-1591226141.png', 'sd'),
+(5, 'file-1571128627.jpg', 'smp');
 
 --
 -- Indexes for dumped tables
@@ -217,31 +230,31 @@ ALTER TABLE `profile`
 -- AUTO_INCREMENT untuk tabel `file`
 --
 ALTER TABLE `file`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `id_forum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_forum` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `komentar`
 --
 ALTER TABLE `komentar`
-  MODIFY `kd_komentar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `kd_komentar` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `link`
 --
 ALTER TABLE `link`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `modul`
 --
 ALTER TABLE `modul`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `pengguna`
@@ -253,7 +266,7 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT untuk tabel `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

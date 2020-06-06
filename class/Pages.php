@@ -76,7 +76,7 @@ class Pages{
     </div>
 </div>
 
-<?php }?>
+<?php } else if( $_SESSION['akses']=="user"){?>
 
 <!-- NAVBAR USER -->
 <div class="navbar">
@@ -96,37 +96,7 @@ class Pages{
             </div>
         </div>
 
-        <div class="dropdown">
-            <button class="dropbtn">Pengguna
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="?halaman=tambah_pengguna">Tambah Pengguna</a>
-                <a href="?halaman=kelola_pengguna">Data Pengguna</a>
-            </div>
-        </div>
 
-        <div class="dropdown">
-            <button class="dropbtn">File
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="?halaman=tambah_file">Upload File</a>
-                <a href="?halaman=kelola_file">Kelola File</a>
-                <a href="?halaman=tambah_link">Upload Link</a>
-                <a href="?halaman=kelola_link">Kelola Link</a>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button class="dropbtn">Modul
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="?halaman=tambah_modul">Upload Modul</a>
-                <a href="?halaman=kelola_modul">Kelola Modul</a>
-            </div>
-        </div>
         <div class="dropdown">
             <button class="dropbtn">Forum
                 <i class="fa fa-caret-down"></i>
@@ -140,7 +110,7 @@ class Pages{
         <img src="../assets/img/logo.png" style="width:150px;height:35px;padding-top:5px; float:right;">
     </div>
 </div>
-
+<?php }?>
 <?php 
         if(!isset($_GET['halaman'])){
             include 'p_admin.php';
