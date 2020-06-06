@@ -24,7 +24,7 @@ class Login extends Database{
             // pengarahan halaman sesuai hak akses
             if ($_SESSION['akses'] == 'admin') {
                 header('Location: halaman/index.php');
-            } else if ($_SESSION['akse'] == 'user') {
+            } else if ($_SESSION['akses'] == 'user') {
                 header('Location: halaman/index.php');
             } else {
                 die;
@@ -37,8 +37,6 @@ class Login extends Database{
     public function verifikasi($nik, $password_hash)
     {
         $query = "SELECT * FROM {$this->table} WHERE nik='$nik' AND password='$password_hash'";
-        var_dump($query);
-        die;
         $result = $this->conn->query($query);
 
         if (mysqli_num_rows($result) > 0) {

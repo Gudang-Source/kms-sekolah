@@ -9,7 +9,6 @@
     <link rel='icon' type='image/png' href='../assets/imgs/logo.png'>
     <script src="../assets/fontawesome5/svg-with-js/js/fontawesome-all.js"></script>
     <link rel="stylesheet" href="../assets/fontawesome5/svg-with-js/css/fa-svg-with-js.css">
-
 </head>
 
 <body>
