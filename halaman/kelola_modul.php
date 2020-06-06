@@ -22,7 +22,6 @@ $admin = new Admin();
                     <th>File</th>
                     <th>Type</th>
                     <th>Size</th>
-                    <th>Created</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -35,20 +34,19 @@ $admin = new Admin();
 
             <tr>
                 <td><?= $no++; ?></td>
-                <td><?= $row->subjek; ?></td>
-                <td><?= $row->kategori ?></td>
-                <td><?= $row->keterangan ?></td>
+                <td><?= $row->judul; ?></td>
+                <td><?= $row->modul; ?></td>
+                <td><?= $row->ket; ?></td>
                 <td>
-                    <a target="_blank" href="../assets/uploads/files/<?= $row->file ?>">Lihat</a>
+                    <a target="_blank" href="../assets/uploads/moduls/<?= $row->file ?>">Lihat</a>
                     <!-- <img src="../assets/uploads/files/<?= $row->file ?>" width="20px"> -->
                 </td>
-                <td><?= $row->type ?></td>
-                <td><?= $row->size ?> Kb</td>
-                <td><?= $row->created?></td>
+                <td><?= $row->type; ?></td>
+                <td><?= $row->size; ?>Kb</td>
                 <td>
 
-                    <a href="?halaman=edit_file&ubah=<?= $row->id;?>"><i class="fas fa-edit"></i></a>
-                    <a href="?halaman=hapus_file&id=<?= $row->id;?>"
+                    <a href="?halaman=edit_modul&ubah=<?= $row->id;?>"><i class="fas fa-edit"></i></a>
+                    <a href="?halaman=hapus_modul&id=<?= $row->id;?>"
                         onclick="javascript:return confirm('Yakin ingin menghapus data ?')"><i
                             class="fas fa-trash"></i></a>
                 </td>

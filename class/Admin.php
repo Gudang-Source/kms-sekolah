@@ -235,6 +235,24 @@ class Admin extends Database
             </script>');
         }
     }
+    public function hapus_modul($table,$id)
+    {
+        $query = "DELETE FROM $table WHERE id='$id'";
+        $result = $this->conn->query($query);
+        if ($result == TRUE) {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Pengguna Dengan Kode ID(' . $id . ') Berhasil dihapus");
+                window.location.href="index.php?halaman=kelola_modul";
+                </script>');
+        } else {
+            echo ('<script LANGUAGE="JavaScript">
+            window.alert("Pengguna Dengan Kode ID(' . $id . ') Gagal dihapus");
+            window.location.href="index.php?halaman=kelola_modul&id='.$id.'";
+            </script>');
+        }
+    }
+
+    
 
     public function upload_link($table,$link,$judul,$jenis,$ket,$link2){
        $query="INSERT INTO $table VALUES ('','$link','$judul','$jenis','$ket',now())";
@@ -255,8 +273,7 @@ class Admin extends Database
     
     
     public function upload_modul($table,$judul,$modul,$ket,$file,$extension,$size,$link2){
-
-       $query="INSERT INTO $table VALUES ('','$judul','$modul','$ket','$file','$extension','$size',now())";
+       $query="INSERT INTO $table VALUES ('','$judul','$modul','$ket','$file','$extension','$size',NOW())";
        $result = mysqli_query($this->conn, $query);
 
         if ($result == TRUE) {
@@ -302,17 +319,7 @@ class Admin extends Database
         }  
     }
 
-    
-    public function upload_modul_xxx($table,$judul,$modul,$ket,$file,$extension,$size){
-        $conn = $this->_db->getConnection();
-       $query="INSERT INTO $table VALUES ('','$judul','$modul','$ket','$file','$extension','$size',now())";
-        $result = mysqli_query($conn, $query);
 
-        if($result)
-        {
-            echo "<script>alert('Anda Berhasil menambahkan modul $modul');location.href='kelola_modul.php'</script>";
-        }  
-    }
 
      
     public function open_forum($table,$subjek,$file,$extension,$size,$kategori,$nama,$konten){

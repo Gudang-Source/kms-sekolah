@@ -14,10 +14,8 @@ if(isset($_POST['submit'])){
     $file = "file-".round(microtime(true)).".".end($ext);
     $sumber = $_FILES['pilihfile']['tmp_name'];
     $extension = end($ext);
-    $upload = move_uploaded_file($sumber, "../assets/uploads/files/".$file);
-    var_dump($upload);
-    die;
-  
+    $upload = move_uploaded_file($sumber, "../assets/uploads/moduls/".$file);
+
     $admin->upload_modul('modul',$judul,$modul,$ket,$file,$extension,$size,'kelola_modul');
 
 }
@@ -55,10 +53,9 @@ if(isset($_POST['submit'])){
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="ket">ket</label>
+                    <label for="ket">Keterangan</label>
                     <textarea name="ket" class="form-control" id="ket" cols="30" rows="10"></textarea>
                 </div>
-
                 <button type="submit" name="submit" class="btn btn-submit">Upload</button>
                 <button type="reset" class="btn btn-reset">Reset</button>
             </form>
