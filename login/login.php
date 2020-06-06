@@ -1,4 +1,3 @@
-
 <?php
 include "class/class_database.php";
 include "class/class_login.php";
@@ -23,8 +22,11 @@ if(isset($_POST['login'])){
 
 
 <script>
-$('.message a').click(function(){
-   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+$('.message a').click(function() {
+    $('form').animate({
+        height: "toggle",
+        opacity: "toggle"
+    }, "slow");
 });
 </script>
 
@@ -32,12 +34,12 @@ $('.message a').click(function(){
 
 <div class="login-page">
 
-  <div class="form">
-  <H2>Login</H2>
-    <form class="login-form" action="" method="post" >
-      <input type="text" name="nik" placeholder="NIK"/>
-      <input type="password" name="sandi" placeholder="Kata Sandi"/>
-      <button type='submit' name='login'>login</button>
-    </form>
-  </div>
+    <div class="form">
+        <H2>Login</H2>
+        <form class="login-form" action="" method="post">
+            <input type="text" name="nik" placeholder="NIK" />
+            <input type="password" name="sandi" placeholder="Kata Sandi" />
+            <button type='submit' name='login'>login</button>
+        </form>
+    </div>
 </div>

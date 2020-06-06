@@ -10,11 +10,12 @@ class Login {
         session_start();
         $conn = $this->_db->getConnection();
         $query= "SELECT * FROM pengguna WHERE nik='$nik'";
+
         $result = $conn->query($query);
         $fetch = mysqli_fetch_assoc($result);
         
         
-        if(password_verify($pass, $fetch['password'])){
+        if(md5($pass == $fetch['password'])){
           
             
             if($fetch['akses']=='admin'){
