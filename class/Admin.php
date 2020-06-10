@@ -289,6 +289,26 @@ class Admin extends Database
             } 
     }
 
+         
+    public function open_forum($table,$subjek,$file,$extension,$size,$kategori,$nama,$konten){
+       $query="INSERT INTO $table VALUES ('','$subjek','$file','$extension','$size','$kategori',now(),'$nama','$konten')";
+ 
+       $result = mysqli_query($this->conn, $query);
+
+       if ($result == TRUE) {
+        echo ('<script LANGUAGE="JavaScript">
+            window.alert("Berhasil Memasukan file baru");
+            window.location.href="index.php?halaman=forum";
+            </script>');
+        } else {
+        echo ('<script LANGUAGE="JavaScript">
+            window.alert("Gagal ditambahkan !");
+            window.location.href="index.php?halaman=tambah_forum";
+            </script>');
+        } 
+
+    }
+
 
 
 
@@ -322,7 +342,7 @@ class Admin extends Database
 
 
      
-    public function open_forum($table,$subjek,$file,$extension,$size,$kategori,$nama,$konten){
+    public function open_forum_xxx($table,$subjek,$file,$extension,$size,$kategori,$nama,$konten){
         $conn = $this->_db->getConnection();
        $query="INSERT INTO $table VALUES ('','$subjek','$file','$extension','$size','$kategori',now(),'$nama','$konten')";
         $result = mysqli_query($conn, $query);

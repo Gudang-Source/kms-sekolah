@@ -3,7 +3,7 @@
 $admin = new Admin();
 $nama=$_SESSION['nama'];
 
-if(@$_POST['submit']){
+if(isset($_POST['submit'])){
   $subjek = $_POST['subjek'];
   $pilihfile = @$_POST['pilihfile'];
   $kategori = $_POST['kategori'];
@@ -14,7 +14,7 @@ if(@$_POST['submit']){
   $file = "file-".round(microtime(true)).".".end($ext);
   $sumber = $_FILES['pilihfile']['tmp_name'];
   $extension = end($ext);
-  $upload = move_uploaded_file($sumber, "../../assets/uploads/forum/".$file);
+  $upload = move_uploaded_file($sumber, "../assets/uploads/forum/".$file);
 
 
   $admin->open_forum('forum',$subjek,$file,$extension,$size,$kategori,$nama,$konten);

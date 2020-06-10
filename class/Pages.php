@@ -87,12 +87,12 @@ class Pages{
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="?halaman=u_yayasan">Upload Yayasan</a>
-                <a href="?halaman=u_prasekolah">Upload Pra Sekolah</a>
-                <a href="?halaman=u_ra">Upload RA</a>
-                <a href="?halaman=u_sd">Upload SD</a>
-                <a href="?halaman=u_smp">Upload SMP</a>
-                <a href="?halaman=u_lttq">Upload LLTQ</a>
+                <a href="?halaman=yayasan">Profil Yayasan</a>
+                <a href="?halaman=prasekolah">Profil Pra Sekolah</a>
+                <a href="?halaman=ra">Profil RA</a>
+                <a href="?halaman=sd">Profil SD</a>
+                <a href="?halaman=smp">Profil SMP</a>
+                <a href="?halaman=lttq">Profil LLTQ</a>
             </div>
         </div>
 
@@ -103,7 +103,7 @@ class Pages{
             </button>
             <div class="dropdown-content">
                 <a href="?halaman=tambah_forum">Tambah Forum</a>
-                <a href="?halaman=kelola_forum">Kelola Forum</a>
+                <a href="?halaman=forum">Forum</a>
             </div>
         </div>
         <a class="nav" href="../logout.php">Logout</a>
