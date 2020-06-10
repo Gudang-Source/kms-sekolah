@@ -293,7 +293,7 @@ class Admin extends Database
          
     public function open_forum($table,$subjek,$file,$extension,$size,$kategori,$nama,$konten){
        $query="INSERT INTO $table VALUES ('','$subjek','$file','$extension','$size','$kategori',now(),'$nama','$konten')";
- 
+
        $result = mysqli_query($this->conn, $query);
 
        if ($result == TRUE) {

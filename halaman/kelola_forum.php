@@ -7,32 +7,34 @@ $admin = new Admin();
 ?>
 
 
-<br>
-<br>
-<br><br>
-<div class="table-container">
-    <table border=1 style="border-collapse: collapse">
-        <thead>
+<?php
+include "../init.php";
+
+?>
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-body" style="padding: 10px;">
+            <a href="?halaman=tambah_forum" class="btn btn-submit">Tambah Forum</a>
+        </div>
+    </div>
+    <div class="card">
+        <table style="text-align: center;" class="table">
             <tr>
                 <th>No</th>
-                <th>Subjek</th>
-                <th>File</th>
-                <th>Type</th>
-                <th>Size</th>
-                <th>Kategori</th>
-                <th>Nama</th>
-                <th>Created</th>
+                <th>Judul</th>
+                <th>Jenis</th>
+                <th>Link</th>
+                <th>Keterangan</th>
                 <th>Aksi</th>
             </tr>
-        </thead>
 
-        <?php
+            <?php
     $no = 1;
     $data = $admin->tampil('forum','','');
     while ($row = $data->fetch_object()) :
 ?>
-
-        <tbody>
             <tr>
                 <td><?= $no++; ?></td>
                 <td><?= $row->subjek; ?></td>
@@ -53,7 +55,7 @@ $admin = new Admin();
                             src="../../assets/img/hapus.png" style="width:15px;height:15px;"> Hapus</a>
                 </td>
             </tr>
-        </tbody>
-        <?php endwhile ?>
-    </table>
+            <?php endwhile ?>
+        </table>
+    </div>
 </div>

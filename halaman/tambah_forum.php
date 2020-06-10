@@ -25,7 +25,7 @@ if(isset($_POST['submit'])){
 <div class="container">
     <div class="card" style="margin-bottom:5px; background-color: rgb(255, 249, 231);">
         <div class=" card-header">
-            <a href="?halaman=lihat_forum">Lihat forum /</a> <span>Tambah Forum</span>
+            <a href="?halaman=kelola_forum">Lihat forum /</a> <span>Tambah Forum</span>
         </div>
     </div>
     <div class="card">
