@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Jun 2020 pada 16.16
+-- Waktu pembuatan: 10 Jun 2020 pada 02.39
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 5.6.40
 
@@ -63,6 +63,13 @@ CREATE TABLE `forum` (
   `nama` varchar(30) NOT NULL,
   `konten` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `forum`
+--
+
+INSERT INTO `forum` (`id_forum`, `subjek`, `file`, `tipe_file`, `ukuran_file`, `kategori`, `tgl_forum`, `nama`, `konten`) VALUES
+(1, 'subjek', 'file-1591456612.png', 'png', '78813', 'umum', '2020-06-06 22:16:51', 'Sutianah', 'as');
 
 -- --------------------------------------------------------
 
@@ -169,11 +176,12 @@ CREATE TABLE `profile` (
 --
 
 INSERT INTO `profile` (`id`, `struktur`, `ket`) VALUES
-(1, 'file-1591226055.jpeg', 'yayasan'),
-(2, 'file-1591226069.png', 'pra sekolah'),
-(3, 'file-1571126582.png', 'ra'),
-(4, 'file-1591226141.png', 'sd'),
-(5, 'file-1571128627.jpg', 'smp');
+(1, 'file-1591747667.png', 'yayasan'),
+(2, 'file-1591748000.png', 'pra sekolah'),
+(3, 'file-1591748223.jpg', 'ra'),
+(4, 'file-1591748463.png', 'sd'),
+(5, 'file-1591748633.jpg', 'smp'),
+(6, 'file-1591749136.png', 'lttq');
 
 --
 -- Indexes for dumped tables
@@ -236,7 +244,7 @@ ALTER TABLE `file`
 -- AUTO_INCREMENT untuk tabel `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `id_forum` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_forum` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `komentar`
@@ -266,7 +274,7 @@ ALTER TABLE `pengguna`
 -- AUTO_INCREMENT untuk tabel `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
