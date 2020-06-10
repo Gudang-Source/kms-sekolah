@@ -1,7 +1,5 @@
 <?php
 include "../init.php";
-
-
 ?>
 <style>
 

@@ -152,6 +152,7 @@ class Admin extends Database
 
     public function upload_struktur($tabel,$file1,$ket,$link){
         $query = "UPDATE $tabel SET struktur='$file1' WHERE ket='$ket'";
+
         $result = mysqli_query($this->conn, $query);
         if ($result == TRUE) {
             echo ('<script LANGUAGE="JavaScript">
