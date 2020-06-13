@@ -1,22 +1,23 @@
 <?php
 
-include "../../class/class_database.php";
-include "../../class/class_admin.php";
-    include "usr_header.php";
+include "../init.php";
 
 $admin = new Admin();
 
+
 if(@$_GET['kom']){
+
     $id_forum= $_GET['kom'];
   }
 
-$nama= $_SESSION['nama'];
 
-if(@$_POST['komentar']){
+$nama=@$_SESSION['nama'];
+
+if(isset($_POST['komentar'])){
     $isi_komentar = $_POST['isi_komentar'];
-
+  
     $admin->komentar('komentar',$id_forum,$isi_komentar,$nama);
-    
+
 }
 
 $result = $admin->tampil('forum','id_forum',$id_forum);
@@ -60,15 +61,11 @@ img {
 }
 
 .isi_komen p,
-    {
+h4 {
     color: grey;
     margin: 1px;
-    padding: 10px;
 }
 </style>
-<br>
-<br><br>
-<br>
 
 <div class="main">
     <div class="container">
@@ -113,13 +110,11 @@ img {
     <br><br>
     <!-- Form Komentar -->
     <div class="komentar">
-        <div class="card">
-            <p>Form Komentar</p>
-            <form action="" method="post">
-                <textarea name="isi_komentar" id="" cols="50" rows="5"></textarea><br>
-                <input type="submit" name="komentar" value="kirim">
-            </form>
-        </div>
+        <p>Form Komentar</p>
+        <form action="" method="post">
+            <textarea name="isi_komentar" id="" cols="50" rows="5"></textarea><br>
+            <button type="submit" name="komentar" class="btn btn-submit">Kirim</button>
+        </form>
     </div>
 </div>
 

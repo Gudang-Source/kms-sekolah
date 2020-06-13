@@ -35,7 +35,7 @@ include "../init.php";
 
             <?php
     $no = 1;
-    $data = $admin->tampil('forum','','');
+    $data = $admin->tampil('forum','kategori','kesentraan');
     while ($row = $data->fetch_object()) :
 ?>
             <tr>
@@ -50,11 +50,7 @@ include "../init.php";
                 <td><?= $row->nama ?></td>
                 <td><?= $row->tgl_forum?></td>
                 <td>
-                    <a href="?halaman=komentar&kom=<?= $row->id_forum;?>"><i class="fas fa-edit"></i></a>
-                    <a href="?halaman=hapus_forum&hapus=<?= $row->id_forum;?>"
-                        onclick="javascript:return confirm('Yakin ingin menghapus data ?')"><img
-                            src="../assets/img/hapus.png" style="width:15px;height:15px;"> Hapus</a>
-                </td>
+                    <a href="?halaman=komentar&kom=<?= $row->id_forum;?>"><i class="fas fa-edit"></i></a> </td>
             </tr>
             <?php endwhile ?>
         </table>

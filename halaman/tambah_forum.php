@@ -23,11 +23,14 @@ if(isset($_POST['submit'])){
 
 
 <div class="container">
+    <?php if ($_SESSION['akses']=="admin"){?>
     <div class="card" style="margin-bottom:5px; background-color: rgb(255, 249, 231);">
         <div class=" card-header">
             <a href="?halaman=kelola_forum">Lihat forum /</a> <span>Tambah Forum</span>
         </div>
     </div>
+    <?php }?>
+
     <div class="card">
         <div class="card-header">
             <h4>Tambah Forum</h4>

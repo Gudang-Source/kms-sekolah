@@ -103,7 +103,10 @@ class Pages{
             </button>
             <div class="dropdown-content">
                 <a href="?halaman=tambah_forum">Tambah Forum</a>
-                <a href="?halaman=forum">Forum</a>
+                <a href="?halaman=forum_umum">Forum Umum</a>
+                <a href="?halaman=forum_kesentraan">Forum Kesentraan</a>
+                <a href="?halaman=forum_tarbiah">Forum Tarbiah</a>
+                <a href="?halaman=forum_parenting">Forum Parenting</a>
             </div>
         </div>
         <a class="nav" href="../logout.php">Logout</a>

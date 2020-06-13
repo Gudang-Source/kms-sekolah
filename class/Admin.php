@@ -253,6 +253,23 @@ class Admin extends Database
         }
     }
 
+    public function hapus_forum($table,$id)
+    {
+        $query = "DELETE FROM $table WHERE id_forum='$id'";
+        $result = $this->conn->query($query);
+        if ($result == TRUE) {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Pengguna Dengan Kode ID(' . $id . ') Berhasil dihapus");
+                window.location.href="index.php?halaman=kelola_modul";
+                </script>');
+        } else {
+            echo ('<script LANGUAGE="JavaScript">
+            window.alert("Pengguna Dengan Kode ID(' . $id . ') Gagal dihapus");
+            window.location.href="index.php?halaman=kelola_modul&id='.$id.'";
+            </script>');
+        }
+    }
+
     
 
     public function upload_link($table,$link,$judul,$jenis,$ket,$link2){
@@ -292,11 +309,9 @@ class Admin extends Database
 
          
     public function open_forum($table,$subjek,$file,$extension,$size,$kategori,$nama,$konten){
-       $query="INSERT INTO $table VALUES ('','$subjek','$file','$extension','$size','$kategori',now(),'$nama','$konten')";
-
-       $result = mysqli_query($this->conn, $query);
-
-       if ($result == TRUE) {
+        $query="INSERT INTO $table VALUES ('','$subjek','$file','$extension','$size','$kategori',now(),'$nama','$konten')";
+        $result = mysqli_query($this->conn, $query);
+        if ($result == TRUE) {
         echo ('<script LANGUAGE="JavaScript">
             window.alert("Berhasil Memasukan file baru");
             window.location.href="index.php?halaman=forum";
@@ -308,6 +323,23 @@ class Admin extends Database
             </script>');
         } 
 
+    }
+    public function komentar($table,$id_forum,$isi_komentar,$nama){
+
+        $query="INSERT INTO $table VALUES ('','$id_forum',now(),'$isi_komentar','$nama')";
+
+        $result = mysqli_query($this->conn, $query);
+        if ($result == TRUE) {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Berhasil Mengomentri");
+                window.location.href="index.php?halaman=kelola_forum";
+                </script>');
+            } else {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Gagal ditambahkan !");
+                window.location.href="index.php?halaman=kelola_forum";
+                </script>');
+            } 
     }
 
 
@@ -355,7 +387,7 @@ class Admin extends Database
         }  
     }
 
-    public function komentar($table,$id_forum,$isi_komentar,$nama){
+    public function komentar_xx($table,$id_forum,$isi_komentar,$nama){
         $conn = $this->_db->getConnection();
        $query="INSERT INTO $table VALUES ('','$id_forum',now(),'$isi_komentar','$nama')";
         $result = mysqli_query($conn, $query);
