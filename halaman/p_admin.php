@@ -42,7 +42,7 @@ h3 {
 <?php } else if  ($_SESSION['akses']=="user"){?>
 <!-- tampilah beranda user -->
 <div class="container">
-    <div class="card">
+    <!-- <div class="card">
         <div class="card-header">
             <span>Pencarian</span>
         </div>
@@ -52,7 +52,7 @@ h3 {
                     class="btn btn-submit">Cari</button>
             </form>
         </div>
-    </div>
+    </div> -->
 </div>
 
 

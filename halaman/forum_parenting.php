@@ -35,7 +35,7 @@ include "../init.php";
 
             <?php
     $no = 1;
-    $data = $admin->tampil('forum','kategori','umum');
+    $data = $admin->tampil('forum','kategori','parenting');
     while ($row = $data->fetch_object()) :
 ?>
             <tr>
