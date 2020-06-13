@@ -8,14 +8,13 @@ $admin = new Admin();
 if(@$_GET['kom']){
 
     $id_forum= $_GET['kom'];
-  }
+}
 
 
 $nama=@$_SESSION['nama'];
 
 if(isset($_POST['komentar'])){
     $isi_komentar = $_POST['isi_komentar'];
-  
     $admin->komentar('komentar',$id_forum,$isi_komentar,$nama);
 
 }
