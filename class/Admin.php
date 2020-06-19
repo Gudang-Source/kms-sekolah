@@ -200,6 +200,7 @@ class Admin extends Database
             }
         
     }
+    
 
     
     public function edit_file_lama($id,$subjek,$kategori,$keterangan,$link){
@@ -219,6 +220,27 @@ class Admin extends Database
         
         
     }
+
+      
+    public function edit_modul_lama($id,$judul,$modul,$ket,$link){
+
+        $query = "UPDATE modul SET judul='$judul', modul='$modul', ket='$ket'  WHERE id='$id'";
+        $result = mysqli_query($this->conn, $query);
+        if ($result == TRUE) {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Berhasil Merubah file");
+                window.location.href="index.php?halaman='.$link.'";
+                </script>');
+            } else {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Gagal Merubah data");
+                window.location.href="index.php?halaman='.$link.'";
+                </script>');
+            }
+        
+        
+    }
+
 
     public function hapus_file($table,$id)
     {
@@ -342,6 +364,44 @@ class Admin extends Database
             } 
     }
 
+    
+    public function edit_modul($id,$judul,$modul,$ket,$file,$extension,$size,$link){
+    
+        $query = "UPDATE modul SET judul='$judul', modul='$modul', ket='$ket', file='$file', type='$extension', size='$size' WHERE id='$id'";
+    
+        $result = mysqli_query($this->conn, $query);
+        if ($result == TRUE) {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Berhasil Merubah file");
+                window.location.href="index.php?halaman='.$link.'";
+                </script>');
+            } else {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Gagal Merubah data");
+                window.location.href="index.php?halaman='.$link.'";
+                </script>');
+            }
+        
+    }
+
+    public function edit_link($id,$link,$judul,$jenis,$ket,$link2){
+
+        $query = "UPDATE link SET link='$link', judul='$judul', jenis='$jenis', ket='$ket' WHERE id='$id'";
+        $result = mysqli_query($this->conn, $query);
+        if ($result == TRUE) {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Berhasil Merubah file");
+                window.location.href="index.php?halaman='.$link2.'";
+                </script>');
+            } else {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Gagal Merubah data");
+                window.location.href="index.php?halaman='.$link2.'";
+                </script>');
+            }
+    }
+
+
 
 
 
@@ -398,7 +458,7 @@ class Admin extends Database
         }  
     }
 
-    public function edit_link($id,$link,$judul,$jenis,$ket){
+    public function edit_link_xxx($id,$link,$judul,$jenis,$ket){
         $conn = $this->_db->getConnection();
         $query = "UPDATE link SET link='$link', judul='$judul', jenis='$jenis', ket='$ket' WHERE id='$id'";
         $result = $conn->query($query);
@@ -444,7 +504,7 @@ class Admin extends Database
         
     }
 
-    public function edit_modul_lama($id,$judul,$modul,$ket){
+    public function edit_modul_lama_xx($id,$judul,$modul,$ket){
         $conn = $this->_db->getConnection();
         $query = "UPDATE modul SET judul='$judul', modul='$modul', keterangan='$ket'  WHERE id='$id'";
         // var_dump($query);
@@ -456,17 +516,6 @@ class Admin extends Database
         
     }
 
-    public function edit_modul($id,$judul,$modul,$ket,$file,$extension,$size){
-        $conn = $this->_db->getConnection();
-        $query = "UPDATE modul SET judul='$judul', modul='$modul', keterangan='$ket', file='$file', type='$extension', size='$size' WHERE id='$id'";
-        // var_dump($query);
-        // die;
-        $result = $conn->query($query);
-        if($result == true){
-            echo "<script>alert('Anda Berhasil memperbarui file');location.href='kelola_modul.php'</script>";
-        }
-        
-    }
 
 
 
