@@ -96,6 +96,14 @@ class Pages{
             </div>
         </div>
 
+        <div class="dropdown">
+            <button class="dropbtn">Link
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="?halaman=lihat_link">Informasi Link</a>
+            </div>
+        </div>
 
         <div class="dropdown">
             <button class="dropbtn">Forum
