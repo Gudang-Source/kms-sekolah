@@ -18,18 +18,14 @@ if(isset($_GET['ubah'])){
     $ket =$_POST['ket'];
   
     $ext = explode(".", $_FILES['pilihfile']['name']);
-
     $size = $_FILES['pilihfile']['size'];
-   
-  
     if($_FILES['pilihfile']['name'] ==""){
       // echo "Tidakedit file";
       $admin->edit_modul_lama($id,$judul,$modul,$ket,'kelola_modul');
   
     }else{
 
-        // echo $size;die;
-
+        // echo $size;d
       $file = "file-".round(microtime(true)).".".end($ext);
       $sumber = $_FILES['pilihfile']['tmp_name'];
       $extension = end($ext);

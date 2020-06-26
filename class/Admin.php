@@ -58,10 +58,6 @@ class Admin extends Database
         return $this;
     }
 
-    public function get_code()
-    {
-        # code...
-    }
 
     public function registrasi($nik,$nama,$jk,$status,$akses,$password){
         $password = md5($password); 

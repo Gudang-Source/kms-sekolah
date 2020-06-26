@@ -1,14 +1,11 @@
 <?php
 include_once 'Database.php';
 class Login extends Database{
-
     private $table = "pengguna";
-    
     public function __construct()
     {
         parent::__construct();
     }
-
     public function login($nik,$pass){
 
         $password_hash = md5($pass);

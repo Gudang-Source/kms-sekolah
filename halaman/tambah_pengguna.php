@@ -203,33 +203,3 @@ function validasi() {
             </form>
         </div>
     </div>
-    <!-- 
-    <label for="nik">NIK</label>
-    <input type="text" name="nik" maxlength="18" id="idnik" placeholder="Masukan NIK 18 Digit.." required>
-    <label for="nama">Nama</label>
-    <input type="text" id="nama" name="nama" placeholder="Masukan nama lengkap..">
-    <label for="jk">Jenis Kelamin</label>
-    <select id="jk" name="jk">
-        <option value="">Pilih</option>
-        <option value="laki-laki">Laki-Laki</option>
-        <option value="perempuan">Perempuan</option>
-    </select>
-    <label for="status">Jabatan</label>
-    <select id="status" name="status">
-        <option value="">Pilih</option>
-        <option value="Guru">Guru</option>
-        <option value="Staf TU">Staf TU</option>
-        <option value="Administrator">Administrator</option>
-    </select>
-    <label for="akses">Akses</label>
-    <select id="akses" name="akses">
-        <option value="">Pilih</option>
-        <option value="admin">Admin</option>
-        <option value="user">User</option>
-    </select>
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" placeholder="Masukan Password..">
-    <tr>
-        <td>&nbsp;</td>
-    </tr>
-    <input type="reset" value="reset"> -->
