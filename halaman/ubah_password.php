@@ -1,7 +1,6 @@
 <?php
 include "../init.php";
 $admin = new Admin();
-
 if(@$_GET['ubah']){
   $id= $_GET['ubah'];
   $result=$admin->tampil('pengguna','id',$id);
