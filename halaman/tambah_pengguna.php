@@ -192,7 +192,7 @@ function validasi() {
                     <select name="akses" id="akses" class="form-control" style="width: 20%" required>
                         <option value="">Pilih</option>
                         <option value="admin">Admin</option>
-                        <option value="user TU">User</option>
+                        <option value="user">User</option>
                     </select>
                 </div>
                 <div class="form-group">
