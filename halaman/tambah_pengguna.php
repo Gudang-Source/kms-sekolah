@@ -7,6 +7,7 @@ if(isset($_POST['submit'])){
     $data = array(
         'nik' => trim($_POST['nik']),
         'nama' => trim($_POST['nama']),
+        'jk' => trim($_POST['jk']),
         'status' => trim($_POST['status']),
         'akses' => trim($_POST['akses']),
         'password' => trim($_POST['password'])
@@ -190,9 +191,8 @@ function validasi() {
                     <label for="akses">Akses</label>
                     <select name="akses" id="akses" class="form-control" style="width: 20%" required>
                         <option value="">Pilih</option>
-                        <option value="Guru">Guru</option>
-                        <option value="Staf TU">Staf TU</option>
-                        <option value="Administrator">Administrator</option>
+                        <option value="admin">Admin</option>
+                        <option value="user TU">User</option>
                     </select>
                 </div>
                 <div class="form-group">

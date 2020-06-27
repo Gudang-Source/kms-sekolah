@@ -7,4 +7,3 @@ $login = new Login();
 $database = new Database();
 $pages = new Pages();
 $admin = new Admin();
-$profile = new Profile();

@@ -12,6 +12,7 @@ if(isset($_POST['submit'])){
   $data = array(
     'nik' => trim($_POST['nik']),
     'nama' => trim($_POST['nama']),
+    'jk' => trim($_POST['jk']),
     'status' => trim($_POST['status']),
     'akses' => trim($_POST['akses'])
 );

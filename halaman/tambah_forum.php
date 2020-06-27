@@ -43,7 +43,7 @@ if(isset($_POST['submit'])){
                 </div>
                 <div class="form-group">
                     <label for="pilihfile">Upload Gambar</label>
-                    <input type="file" class="form-control" id="pilihfile" name="pilihfile" required>
+                    <input type="file" class="form-control" id="pilihfile" name="pilihfile">
                 </div>
                 <div class="form-group">
                     <label for="kategori">Kategori Materi</label>

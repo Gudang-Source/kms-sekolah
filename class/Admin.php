@@ -245,12 +245,12 @@ class Admin extends Database
         if ($result == TRUE) {
             echo ('<script LANGUAGE="JavaScript">
                 window.alert("Pengguna Dengan Kode ID(' . $id . ') Berhasil dihapus");
-                window.location.href="index.php?halaman=kelola_pengguna";
+                window.location.href="index.php?halaman=kelola_file";
                 </script>');
         } else {
             echo ('<script LANGUAGE="JavaScript">
             window.alert("Pengguna Dengan Kode ID(' . $id . ') Gagal dihapus");
-            window.location.href="index.php?halaman=kelola_pengguna&id='.$id.'";
+            window.location.href="index.php?halaman=kelola_file&id='.$id.'";
             </script>');
         }
     }
