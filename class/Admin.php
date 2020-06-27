@@ -274,16 +274,17 @@ class Admin extends Database
     public function hapus_forum($table,$id)
     {
         $query = "DELETE FROM $table WHERE id_forum='$id'";
+
         $result = $this->conn->query($query);
         if ($result == TRUE) {
             echo ('<script LANGUAGE="JavaScript">
                 window.alert("Pengguna Dengan Kode ID(' . $id . ') Berhasil dihapus");
-                window.location.href="index.php?halaman=kelola_modul";
+                window.location.href="index.php?halaman=kelola_forum";
                 </script>');
         } else {
             echo ('<script LANGUAGE="JavaScript">
             window.alert("Pengguna Dengan Kode ID(' . $id . ') Gagal dihapus");
-            window.location.href="index.php?halaman=kelola_modul&id='.$id.'";
+            window.location.href="index.php?halaman=kelola_forum&id='.$id.'";
             </script>');
         }
     }
@@ -332,12 +333,12 @@ class Admin extends Database
         if ($result == TRUE) {
         echo ('<script LANGUAGE="JavaScript">
             window.alert("Berhasil Memasukan file baru");
-            window.location.href="index.php?halaman=forum";
+            window.location.href="index.php?halaman=kelola_forum";
             </script>');
         } else {
         echo ('<script LANGUAGE="JavaScript">
             window.alert("Gagal ditambahkan !");
-            window.location.href="index.php?halaman=tambah_forum";
+            window.location.href="index.php?halaman=kelola_forum";
             </script>');
         } 
 

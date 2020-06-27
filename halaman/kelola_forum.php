@@ -1,18 +1,10 @@
 <?php
 include "../init.php";
-
 $admin = new Admin();
-
-
 ?>
-
-
 <?php
 include "../init.php";
-
 ?>
-
-
 <div class="container">
     <div class="card">
         <div class="card-body" style="padding: 10px;">
