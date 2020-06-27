@@ -397,6 +397,36 @@ class Admin extends Database
                 </script>');
             }
     }
+    public function edit_password($data, $clause){
+
+        foreach ($clause as $value) {
+            $kd = $value;
+        }
+
+        foreach ($data as $key => $value) {
+            $field .= $key . "='" . $value . "',";
+        }
+        $field = substr($field, 0, -2);
+        foreach ($clause as $key => $value) {
+            $condition .= $key . "='" . $value . "' AND ";
+        }
+        $condition = substr($condition, 0, -5);
+        $query = 'UPDATE ' . $this->_table . ' SET ' . $field . "' WHERE " . $condition;
+    
+
+        $result = mysqli_query($this->conn, $query);
+        if ($result == TRUE) {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Kode (' . $kd . ') Berhasil diperbarui");
+                window.location.href="index.php?halaman=kelola_pengguna";
+                </script>');
+        } else {
+            echo ('<script LANGUAGE="JavaScript">
+                window.alert("Kode (' . $kd . ') Gagal diperbarui");
+                window.location.href="index.php??halaman=kelola_pengguna&id=' . $kd . '";
+                </script>');
+        }
+    }
 
 
 

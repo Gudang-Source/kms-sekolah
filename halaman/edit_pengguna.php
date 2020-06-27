@@ -19,7 +19,8 @@ if(isset($_POST['submit'])){
 $clausa = array(
   'id' => trim($_GET['ubah'])
 );
-
+var_dump($data);
+die;
     $admin->edit_pengguna($data, $clausa);
 }
 ?>
@@ -70,6 +71,7 @@ $clausa = array(
                         <option value="user" <?php if( $fetch->akses=='user') echo "selected";?>>user</option>
                     </select>
                 </div>
+
                 <button type="submit" name="submit" class="btn btn-submit">Ubah Pengguna</button>
             </form>
         </div>

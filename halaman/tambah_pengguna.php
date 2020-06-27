@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
         'jk' => trim($_POST['jk']),
         'status' => trim($_POST['status']),
         'akses' => trim($_POST['akses']),
-        'password' => trim($_POST['password'])
+        'password' => trim(md5($_POST['password']))
     );
     $value = $_POST['nik'];
 

@@ -40,6 +40,7 @@ include "../init.php";
                     <td><?= $row->created?></td>
                     <td>
                         <a href="?halaman=edit_pengguna&ubah=<?= $row->id;?>"><i class="fas fa-edit"></i></a>
+                        <a href="?halaman=ubah_password&ubah=<?= $row->id;?>"><i class="fas fa-key"></i></a>
                         <a href="?halaman=hapus_pengguna&id=<?= $row->id;?>"
                             onclick="javascript:return confirm('Yakin ingin menghapus data ?')"><i
                                 class="fas fa-trash"></i></a>
